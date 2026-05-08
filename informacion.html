@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activa tu cuerpo, potencia tu mente</title>
+
+    <link rel="stylesheet" href="info.css">
+    <link rel="icon" href="muevete.ico.jpeg">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>💚 Salud+</h2>
+         <ul>
+          
+            <li class="active"><a href="Index .HTML">🏠 Inicio</a></li>
+            <li><a href="menu.html">💪 Ejercicios</a></li>
+            <li><a href="informacion.html">🔥 Motivación</a></li>
+            <li><a href="sevicios.html">📋 Consejos</a></li>
+            <li><a href="AYUDA ESTUDIO.HTML">📚 Estudio</a></li>
+             <li><a href="dieta.html">🥗Dieta</a></li>
+             <li><a href="juego.html">🏆Bingo🏆</a></li>
+            <li><a href="principal.html">✅ Conclusión</a></li>
+       
+        </ul>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- BANNER -->
+        <section class="banner">
+            <h1>💥 Activa tu cuerpo, potencia tu mente 💥</h1>
+            <p>El deporte transforma tu cuerpo, tu mente y tu rendimiento académico.</p>
+        </section>
+
+        <!-- MOTIVACIÓN -->
+        <section class="motivacion">
+
+            <div class="caja5">
+
+                <h2>🔥 Motivación principal</h2>
+
+                <p>
+                    El deporte fortalece la disciplina, mejora la concentración
+                    y ayuda a tener un mejor rendimiento académico.
+                </p>
+
+                <h3>💡 ¿Cómo influye el ejercicio?</h3>
+
+                <ul>
+                    <li>📚 Mejora la concentración en clases</li>
+                    <li>🧠 Aumenta la memoria y aprendizaje</li>
+                    <li>⚡ Reduce el estrés y ansiedad</li>
+                    <li>⏰ Fomenta la disciplina diaria</li>
+                    <li>😊 Mejora el estado de ánimo</li>
+                </ul>
+
+                <p class="frase-final">
+                    ✨ "Un cuerpo activo crea una mente imparable" ✨
+                </p>
+
+                <!-- TEXTO EXTRA -->
+                <p>
+                    Hacer ejercicio no solo es importante para el cuerpo, sino también para el desarrollo mental.
+                    Estudiantes activos suelen tener mejor rendimiento y mayor motivación.
+                </p>
+
+            </div>
+
+            <!-- COLLAGE -->
+            <div class="collage">
+                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b">
+                <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf">
+                <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd">
+            </div>
+
+        </section>
+
+        <!-- CONTADOR -->
+        <section class="contador">
+
+            <div class="box">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <div class="numero" data-target="100">0</div>
+                <p>Salud</p>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-brain"></i>
+                <div class="numero" data-target="90">0</div>
+                <p>Concentración</p>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-fire"></i>
+                <div class="numero" data-target="250">0</div>
+                <p>Energía</p>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-book"></i>
+                <div class="numero" data-target="95">0</div>
+                <p>Rendimiento</p>
+            </div>
+
+        </section>
+
+        <!-- PROGRESO -->
+        <section class="progreso">
+            <h3>📊 Tu progreso diario</h3>
+
+            <div class="barra">
+                <div class="progreso-interno" id="barra"></div>
+            </div>
+
+            <button class="btn-progreso" onclick="aumentarProgreso()">
+                Aumentar progreso 🚀
+            </button>
+        </section>
+
+        <!-- CONSEJOS -->
+        <section class="tips">
+            <h2>🔥 Consejos para estudiantes activos</h2>
+
+            <div class="cards">
+                <div class="card">📅 Organiza tu tiempo</div>
+                <div class="card">🥗 Alimentación saludable</div>
+                <div class="card">💤 Duerme 7-8 horas</div>
+                <div class="card">🎯 Establece metas</div>
+            </div>
+        </section>
+
+        <!-- FORMULARIO -->
+        <section class="formulario">
+            <h2>📋 Tu opinión importa</h2>
+
+            <button class="btn-encuesta" onclick="abrirFormulario()">
+                Responder encuesta
+            </button>
+        </section>
+
+    </main>
+
+</div>
+
+<!-- MODAL -->
+<div id="modalFormulario" class="modal-formulario">
+    <div class="contenido-formulario">
+        <span class="cerrar-form" onclick="cerrarFormulario()">&times;</span>
+
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqFEWpUJOlR4wXVmTugUMfL6iA6i9DstlQrs8gDqDpbOJtzw/viewform"></iframe>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>© 2026 Jessenia Quinde | Proyecto Salud+</p>
+</footer>
+
+<script>
+
+// MODAL
+function abrirFormulario() {
+    document.getElementById("modalFormulario").style.display = "flex";
+}
+
+function cerrarFormulario() {
+    document.getElementById("modalFormulario").style.display = "none";
+}
+
+// CONTADOR
+const counters = document.querySelectorAll('.numero');
+
+counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+
+    const update = () => {
+        const increment = target / 80;
+
+        if (count < target) {
+            count += increment;
+            counter.innerText = Math.floor(count);
+            requestAnimationFrame(update);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
+    update();
+});
+
+// PROGRESO
+let progreso = 0;
+
+function aumentarProgreso() {
+    if (progreso < 100) {
+        progreso += 10;
+        document.getElementById("barra").style.width = progreso + "%";
+    }
+}
+
+</script>
+
+</body>
+</html>

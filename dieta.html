@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dieta Salud+</title>
+    <link rel="stylesheet" href="dieta.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>💚 Salud+</h2>
+
+         <ul>
+          
+            <li class="active"><a href="Index .HTML">🏠 Inicio</a></li>
+            <li><a href="menu.html">💪 Ejercicios</a></li>
+            <li><a href="informacion.html">🔥 Motivación</a></li>
+            <li><a href="sevicios.html">📋 Consejos</a></li>
+            <li><a href="AYUDA ESTUDIO.HTML">📚 Estudio</a></li>
+             <li><a href="dieta.html">🥗Dieta</a></li>
+             <li><a href="juego.html">🏆Bingo🏆</a></li>
+            <li><a href="principal.html">✅ Conclusión</a></li>
+       
+        </ul>
+    </aside>
+
+    <!-- CONTENIDO -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="topbar">
+            <h1>✨ Generador Inteligente de Salud</h1>
+            <p>Obtén dieta y rutina personalizada</p>
+        </header>
+
+        <!-- CONTENEDOR -->
+        <div class="container">
+
+            <!-- DIETA -->
+            <div class="card">
+                <h2>🥗 Dieta</h2>
+
+                <input type="number" id="edadD" placeholder="Edad">
+                <input type="number" id="pesoD" placeholder="Peso (kg)">
+
+                <select id="actividadD">
+                    <option>Bajo</option>
+                    <option>Medio</option>
+                    <option>Alto</option>
+                </select>
+
+                <select id="objetivoD">
+                    <option>Bajar peso</option>
+                    <option>Mantener</option>
+                    <option>Subir masa</option>
+                </select>
+
+                <button onclick="generarDieta()">Generar Dieta</button>
+
+                <div class="resultado" id="resultadoDieta"></div>
+            </div>
+
+            <!-- EJERCICIOS -->
+            <div class="card">
+                <h2>💪 Ejercicios</h2>
+
+                <input type="number" id="edadE" placeholder="Edad">
+                <input type="number" id="pesoE" placeholder="Peso (kg)">
+
+                <select id="actividadE">
+                    <option>Bajo</option>
+                    <option>Medio</option>
+                    <option>Alto</option>
+                </select>
+
+                <select id="objetivoE">
+                    <option>Fuerza</option>
+                    <option>Resistencia</option>
+                    <option>Flexibilidad</option>
+                </select>
+
+                <button onclick="generarEjercicio()">Generar Rutina</button>
+
+                <div class="resultado" id="resultadoEjercicio"></div>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+function generarDieta() {
+    let objetivo = document.getElementById("objetivoD").value;
+    let resultado = "";
+
+    if (objetivo === "Bajar peso") {
+        resultado = "🥣 Avena + fruta<br>🍗 Pollo + arroz + ensalada<br>🥗 Cena ligera";
+    } else if (objetivo === "Subir masa") {
+        resultado = "🍳 Huevos + pan<br>🥩 Carne + arroz<br>🥤 Batido proteína";
+    } else {
+        resultado = "🥗 Dieta equilibrada con proteínas, frutas y verduras";
+    }
+
+    document.getElementById("resultadoDieta").innerHTML = resultado;
+}
+
+function generarEjercicio() {
+    let objetivo = document.getElementById("objetivoE").value;
+    let resultado = "";
+
+    if (objetivo === "Fuerza") {
+        resultado = "💪 Flexiones<br>🏋️ Sentadillas<br>🔥 Abdominales";
+    } else if (objetivo === "Resistencia") {
+        resultado = "🏃 Correr<br>🚴 Bicicleta<br>🔥 Cardio";
+    } else {
+        resultado = "🧘 Yoga<br>🧘 Estiramientos<br>🧘 Movilidad";
+    }
+
+    document.getElementById("resultadoEjercicio").innerHTML = resultado;
+}
+</script>
+
+</body>
+</html>

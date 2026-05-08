@@ -1,0 +1,137 @@
+
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+
+:root {
+    --azul: #0b2c5f;
+    --rojo: #c62828;
+    --blanco: #ffffff;
+}
+
+
+.cab {
+    background: linear-gradient(rgba(11,44,95,0.8), rgba(11,44,95,0.8)),
+                url("dep.webp") center/cover no-repeat;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.cabeza h1 {
+    font-size: 3em;
+}
+
+.cabeza p {
+    font-size: 1.2em;
+}
+
+
+nav {
+    background-color: var(--azul);
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    border-bottom: 2px solid var(--rojo);
+}
+
+main {
+    padding: 40px 10%;
+}
+
+
+.seccion {
+    display: flex;
+    gap: 30px;
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+.seccion img {
+    width: 300px;
+    border-radius: 15px;
+}
+
+.seccion h2 {
+    color: var(--azul);
+    margin-bottom: 15px;
+    border-left: 5px solid var(--rojo);
+    padding-left: 10px;
+}
+
+.invertida {
+    flex-direction: row-reverse;
+}
+
+.cards {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cards h2 {
+    color: var(--azul);
+    margin-bottom: 25px;
+}
+
+.card {
+    display: inline-block;
+    width: 30%;
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    border-top: 5px solid var(--rojo);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.redes {
+    background-color: var(--azul);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.redes a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background-color: var(--rojo);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.redes a:hover {
+    background-color: white;
+    color: var(--rojo);
+}
+
+footer {
+    background-color: #081f3d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}

@@ -1,0 +1,149 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #000000, #0f2027);
+    color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:linear-gradient(180deg, #00ff66, #000);
+    position:fixed;
+    padding:20px;
+}
+
+.sidebar h2{
+    background:#00ff7f;
+    color:black;
+    text-align:center;
+    padding:15px;
+    border-radius:15px;
+    margin-bottom:30px;
+    box-shadow:0 0 20px #00ff7f;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin:15px 0;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+    padding:10px;
+    display:block;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.sidebar ul li a:hover{
+    background:#00ff7f;
+    color:black;
+}
+
+/* MAIN */
+.main{
+    margin-left:260px;
+    padding:20px;
+}
+
+/* HEADER */
+.topbar{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.topbar h1{
+    font-size:28px;
+    color:#00ffcc;
+}
+
+.topbar p{
+    opacity:0.7;
+}
+
+/* CONTENEDOR */
+.container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+}
+
+/* TARJETAS */
+.card{
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding:25px;
+    border-radius:20px;
+    width:320px;
+    box-shadow:0 0 20px #00ff99;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px #00ffcc;
+}
+
+.card h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+/* INPUTS */
+input, select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:10px;
+    border:none;
+}
+
+/* BOTÓN */
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#00ff99;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#00cc77;
+    transform:scale(1.05);
+}
+
+/* RESULTADO */
+.resultado{
+    margin-top:15px;
+    padding:10px;
+    background:#000;
+    border-radius:10px;
+    box-shadow:0 0 10px #00ff99;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .container{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+
+
+
+
+

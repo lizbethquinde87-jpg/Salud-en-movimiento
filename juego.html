@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bingo Neon</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#000;
+    color:#00ff66;
+    display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:linear-gradient(180deg, #00ff66, #000000);
+    position:fixed;
+    left:0;
+    top:0;
+    padding:20px;
+}
+
+.sidebar h2{
+    text-align:center;
+    color:#00ff66;
+    text-shadow:0 0 10px #00ff66;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li a{
+    color:#00ff66;
+    text-decoration:none;
+    display:block;
+    padding:10px;
+    margin:10px 0;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.sidebar ul li a:hover{
+    background:#00ff66;
+    color:black;
+    box-shadow:0 0 10px #00ff66;
+}
+
+/* CONTENIDO CENTRADO */
+.main{
+    margin-left:250px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+}
+
+/* TITULO */
+h1{
+    font-size:40px;
+    text-shadow:0 0 15px #00ff66;
+}
+
+/* INPUTS */
+input{
+    padding:10px;
+    margin:5px;
+    border-radius:10px;
+    border:1px solid #00ff66;
+    background:black;
+    color:#00ff66;
+}
+
+/* BOTONES */
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    background:#00ff66;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    margin:10px;
+    box-shadow:0 0 10px #00ff66;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #00ff66;
+}
+
+/* TABLEROS */
+.tableros{
+    display:flex;
+    gap:40px;
+    margin-top:20px;
+}
+
+/* TABLERO */
+.tablero{
+    display:grid;
+    grid-template-columns:repeat(5,60px);
+    gap:8px;
+    padding:10px;
+    border-radius:15px;
+    background:#111;
+    box-shadow:0 0 15px #00ff66;
+}
+
+/* CASILLAS */
+.casilla{
+    width:60px;
+    height:60px;
+    background:#000;
+    border:1px solid #00ff66;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:22px;
+    transition:0.2s;
+}
+
+.casilla:hover{
+    box-shadow:0 0 10px #00ff66;
+}
+
+.activa{
+    background:#00ff66;
+    color:black;
+    box-shadow:0 0 15px #00ff66;
+}
+
+.ganadora{
+    background:lime !important;
+    box-shadow:0 0 25px lime;
+}
+
+/* RESULTADO */
+#resultado{
+    margin-top:10px;
+    font-size:22px;
+    text-shadow:0 0 10px #00ff66;
+}
+
+/* GANADOR */
+#pantallaWin{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+
+#pantallaWin h2{
+    font-size:50px;
+    color:#00ff66;
+    text-shadow:0 0 20px #00ff66;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+<h2>💚 Salud+</h2>
+<ul>
+  <li class="active"><a href="Index .HTML">🏠 Inicio</a></li>
+            <li><a href="menu.html">💪 Ejercicios</a></li>
+            <li><a href="informacion.html">🔥 Motivación</a></li>
+            <li><a href="sevicios.html">📋 Consejos</a></li>
+            <li><a href="AYUDA ESTUDIO.HTML">📚 Estudio</a></li>
+             <li><a href="dieta.html">🥗Dieta</a></li>
+              <li><a href="juego.html">🏆Bingo🏆</a></li>
+            <li><a href="principal.html">✅ Conclusión</a></li>
+</ul>
+</aside>
+
+<!-- CONTENIDO -->
+<div class="main">
+
+<h1>🏆 BINGO  🏆</h1>
+
+<input id="jug1" placeholder="Jugador 1">
+<input id="jug2" placeholder="Jugador 2">
+
+<div>
+<button onclick="iniciar()">🎮 Iniciar</button>
+<button onclick="sortear()">🎲 Sacar</button>
+</div>
+
+<div id="resultado">Palabra: -</div>
+
+<div class="tableros">
+<div>
+<h3 id="nombre1"></h3>
+<div id="tablero1" class="tablero"></div>
+</div>
+
+<div>
+<h3 id="nombre2"></h3>
+<div id="tablero2" class="tablero"></div>
+</div>
+</div>
+
+</div>
+
+<!-- GANADOR -->
+<div id="pantallaWin">
+<h2 id="textoGanador"></h2>
+<button onclick="location.reload()">🔄 Reiniciar</button>
+</div>
+
+<audio id="musicaWin" src="https://www.soundjay.com/human/sounds/applause-8.mp3"></audio>
+
+<script>
+
+const itemsBase=["🍟","🍇","🍗","🍌","🍔","🌽","🍍","🥦","🌶️","🍩","🍉","🍕","🍋","🥕","🍎","🥪","🍓","🍦","🍊","🥬","🍄","🧀","🍒"];
+
+let tablero1=[],tablero2=[],bolsa=[],palabrasDichas=[];
+
+function mezclar(a){return[...a].sort(()=>Math.random()-0.5);}
+
+function hablar(t){
+let v=new SpeechSynthesisUtterance(t);
+v.lang="es-ES";
+speechSynthesis.speak(v);
+}
+
+function iniciar(){
+nombre1.textContent=jug1.value||"Jugador 1";
+nombre2.textContent=jug2.value||"Jugador 2";
+tablero1=crear("tablero1");
+tablero2=crear("tablero2");
+bolsa=mezclar(itemsBase);
+palabrasDichas=[];
+}
+
+function crear(id){
+let cont=document.getElementById(id);
+cont.innerHTML="";
+let items=mezclar(itemsBase);
+let celdas=[];
+
+for(let i=0;i<25;i++){
+let d=document.createElement("div");
+d.className="casilla";
+
+if(i===12){
+d.textContent="FREE";
+d.classList.add("activa");
+}else{
+d.textContent=items[i];
+}
+
+d.onclick=()=>{
+let val=d.textContent;
+if(val!=="FREE" && !palabrasDichas.includes(val)){
+alert("❌ No ha salido");
+return;
+}
+d.classList.toggle("activa");
+verificar(celdas,id);
+};
+
+cont.appendChild(d);
+celdas.push(d);
+}
+return celdas;
+}
+
+function sortear(){
+if(!bolsa.length)return;
+let p=bolsa.pop();
+palabrasDichas.push(p);
+resultado.textContent="Palabra: "+p;
+hablar("Salió "+p);
+}
+
+function verificar(tablero,id){
+let combos=[[0,1,2,3,4],[5,6,7,8,9],[10,11,12,13,14],[15,16,17,18,19],[20,21,22,23,24],
+[0,5,10,15,20],[1,6,11,16,21],[2,7,12,17,22],[3,8,13,18,23],[4,9,14,19,24],
+[0,6,12,18,24],[4,8,12,16,20]];
+
+for(let c of combos){
+if(c.every(i=>tablero[i].classList.contains("activa"))){
+c.forEach(i=>tablero[i].classList.add("ganadora"));
+let nombre=id==="tablero1"?nombre1.textContent:nombre2.textContent;
+ganar(nombre);
+return;
+}
+}
+}
+
+function ganar(n){
+textoGanador.textContent="🏆 GANÓ "+n;
+pantallaWin.style.display="flex";
+hablar("Ganó "+n);
+musicaWin.play();
+}
+
+</script>
+
+</body>
+</html>

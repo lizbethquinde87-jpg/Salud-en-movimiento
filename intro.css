@@ -1,0 +1,148 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+    background: #0b0f0c;
+    color: white;
+}
+
+/* CONTENEDOR */
+.container {
+    display: flex;
+}
+
+/* MENÚ LATERAL */
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:linear-gradient(180deg, #00ff66, #000000);
+    position:fixed;
+    left:0;
+    top:0;
+    padding:20px;
+}
+
+.sidebar h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:black;
+    background:#00ff66;
+    padding:10px;
+    border-radius:10px;
+}
+/* LINKS DEL MENÚ */
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* CONTENIDO PRINCIPAL */
+.main {
+    margin-left: 240px;
+    padding: 20px;
+    width: 100%;
+}
+
+/* HERO (INDEX) */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(90deg, #00ff88, #004d26);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ff88;
+    margin-bottom: 20px;
+}
+
+.hero img {
+    width: 150px;
+    border-radius: 15px;
+}
+
+/* HEADER (OTRAS PÁGINAS) */
+header {
+    background: linear-gradient(90deg, #00ff88, #004d26);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px #00ff88;
+}
+
+/* TARJETAS */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #1a1a1a;
+    width: 260px;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+
+    box-shadow: 0 0 15px #00ff88;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* IMÁGENES */
+.card img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+/* TEXTOS */
+.card h3 {
+    color: #00ff88;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #ccc;
+}
+
+/* SECCIÓN INFO */
+.info {
+    margin-top: 20px;
+    padding: 20px;
+    background: #111;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #00ff
+    88;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+
+
+

@@ -1,0 +1,176 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+}
+
+/* CONTAINER */
+.container{
+    display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:linear-gradient(180deg,#00ff66,#000);
+    position:fixed;
+    top:0;
+    left:0;
+    padding:20px;
+}
+
+.sidebar h2{
+    text-align:center;
+    background:#00ff66;
+    color:black;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:25px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin:15px 0;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+    padding:10px;
+    display:block;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active a{
+    background:#00ff66;
+    color:black;
+}
+
+/* MAIN */
+.main{
+    margin-left:270px;
+    padding:20px;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    background:linear-gradient(135deg,#00ff66,#111);
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px #00ff66;
+}
+
+.img-central{
+    width:200px;
+    margin-bottom:10px;
+}
+
+.hero h1{
+    margin-bottom:10px;
+}
+
+/* FRASE */
+.frase{
+    margin:20px 0;
+    text-align:center;
+    font-style:italic;
+    color:#00ff66;
+}
+
+/* OBJETIVOS */
+.objetivos{
+    background:#1a1a1a;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px #00ff66;
+}
+
+.objetivo-box p{
+    margin:8px 0;
+}
+
+/* DATO */
+.dato{
+    margin:20px 0;
+    padding:15px;
+    background:#111;
+    border-left:5px solid #00ff66;
+}
+
+/* TITULO SECCIONES */
+.hero1{
+    margin-top:25px;
+    text-align:center;
+    color:#00ff66;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:15px;
+}
+
+.card{
+    background:#1a1a1a;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 0 10px #00ff66;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* PROGRESO */
+.progreso{
+    margin-top:30px;
+    background:#111;
+    padding:20px;
+    border-radius:10px;
+}
+
+.barra{
+    width:100%;
+    height:15px;
+    background:#333;
+    border-radius:10px;
+    overflow:hidden;
+    margin:5px 0 15px 0;
+}
+
+.barra span{
+    display:block;
+    height:100%;
+    background:#00ff66;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    margin-top:30px;
+    padding:15px;
+    background:#111;
+    border-radius:10px;
+}
